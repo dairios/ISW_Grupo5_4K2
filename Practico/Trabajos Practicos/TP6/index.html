@@ -1,0 +1,323 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/css/bootstrap.min.css" integrity="sha384-B0vP5xmATw1+K9KRQjQERJvTumQW0nPEzvF6L/Z6nronJ3oUOFUFpCjEUQouq2+l" crossorigin="anonymous">
+    <link href="http://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.3.0/css/font-awesome.css" rel="stylesheet"  type='text/css'>
+    <script src="https://kit.fontawesome.com/eb1cd33b61.js" crossorigin="anonymous"></script>
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@200&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="css.css">
+    <script type="text/javascript" src="angular.min.js"></script>
+    <script src="loquesea.module.js"></script>
+
+    <title>DeliverEat!</title>
+</head>
+<header>
+    <div class="container-fluid">
+        <div id="nav">
+            <button type="button" class="btn"><i class="fas fa-arrow-left"></i></button>
+            <label id="titulo">DeliverEat!</label>
+        </div>         
+    </div>
+</header>
+
+<body ng-app="LoQueSeaModule" ng-controller="LoQueSeaController" id="cuerpo">
+    
+    <form name="formLoQueSea" ng-model="formLoQueSea" id="formulario">
+            <label id="intro"> Te enviamos a tu casa lo que necesites. Para realizar un pedido, usa "Lo que sea".</label>
+        
+          <div class="form-group" id="espacio">
+            <label for="txt_pedido" id="lbl_secciones">Mi pedido</label>
+            <div id="bordes">
+                <div class="input-group">
+                    <span class="input-group-addon">
+                        <i class="far fa-edit" id="icons"></i>
+                    </span>
+                    <input type="text" class="form-control" id="txt_pedido" placeholder="¿Qué quieres pedir?">
+                </div>
+                <label id="error_txt_pedido">Debe ingresar el pedido</label>
+            </div>
+          
+        </div>
+        
+        <div class="form-group" >
+            <label for="txt_subir_imagen" id="lbl_secciones">Imagen del pedido (opcional)</label>
+            <div id="bordes">
+                <div id="multer">
+                    <div class="input-group">
+                        <span class="input-group-addon">
+                            <i class="far fa-images" id="icons_pict"></i>
+                        </span> 
+                        <div class="form-group">                              
+                            <input type="file" accept=".jpg" class="form-control-file" id="imagen">
+                        </div>
+                        <label id="error_txt_solo_imagenes">Solo se pueden seleccionar imágenes .jpg</label>
+                        <label id="error_txt_5_megas">El tamaño máximo es de 5 MB</label>          
+                    </div>   
+                </div>
+            </div>
+          </div>
+        
+        <!-- Dirección del comercio -->
+        <div class="form-group" id="espacio">
+            <label for="txt_comercio" id="lbl_secciones">Dirección de comercio</label>
+            <div id="bordes">
+                <div class="input-group">
+                    <!-- Seleccionar ubicacion -->
+                    <div class="btn-group" role="group" aria-label="Basic example">
+                        <div id="btn_ubiEsp" class="ng-pristine ng-untouched ng-valid ng-empty btn btn-secondary" onclick="ubicacionEspecifica()">Ubicación específica</div>
+                        <div id="btn_ubiAct" class="ng-pristine ng-untouched ng-valid ng-empty btn btn-secondary" onclick="ubicacionActual()">Ubicación en el mapa</div>
+                    </div>
+                
+                    <div id="map">
+                    </div>
+
+                    <div class="input-group" id="datos_comercio">
+
+                        <div class="formulario__grupo" id="grupo__calleComercio">
+                            <div class="formulario__grupo-input">
+                                    <i class="fas fa-road" id="iconss"></i>
+                                <input type="text" class="formulario__input" name="calleComercio" id="calleComercio" placeholder="Calle">
+                            </div>
+                            <p class="formulario__input-error" id="errorCalleC">Debe ingresar entre 3 y 30 letras y/o números</p>
+                        </div>                   
+
+                        <div class="formulario__grupo" id="grupo__numeroComercio">
+                            <div class="formulario__grupo-input">
+                                <span class="input-group-addon">
+                                    <i class="fas fa-map-pin" id="icons2"></i>
+                                </span>
+                            
+                                <input type="number" class="formulario__input" name="numeroComercio" id="numeroComercio" placeholder="Número">
+                            </div>
+                            <p class="formulario__input-error" id="errorNumeroC">Solo se permiten números de 1 a 5 dígitos </p>
+                        </div>
+
+                        <div class="form-group" id="espacido">
+                            <i class="fas fa-globe" id="globe"></i>
+                                <select   id="select" class="container">
+                                    <option  value="" hidden  >Seleccionar Ciudad...</option>
+                                    <option> Córdoba</option>
+                                    <option> Carlos Paz</option>
+                                    <option> Villa Allende</option>
+                                    <option> Villa María</option>
+                                  </select>
+                            <label id="error_txt_ciudad">Debe seleccionar la ciudad</label>
+                        </div>
+
+                        <div class="formulario__grupo" id="grupo__referencia_comercio">
+                            <div class="formulario__grupo-input">
+                                <span class="input-group-addon">
+                                    <i class="fas fa-clipboard" id="icons2"></i>
+                                </span>
+                                <input type="text" class="formulario__input" name="referenciaComercio" id="referenciaComercio" placeholder="Referencia (Opcional)">
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+
+                <label id="error_txt_comercio">Debe ingresar el comercio</label>
+
+            </div>
+        </div>
+        
+        <!--Dirección de entrega-->
+        <div class="form-group" id="espacio">
+            <label for="txt_direccion_entrega" id="lbl_secciones">Dirección de entrega</label>
+            <div id="bordes">
+                <div class="input-group">
+                    
+
+                    
+                    <div class="formulario__grupo" id="grupo__calle">
+                        <div class="formulario__grupo-input">
+                            <span class="input-group-addon">
+                                <i class="fas fa-road" id="iconsd"></i>
+                            </span>
+                            <input type="text" class="formulario__input" name="calle" id="calle" placeholder="Calle">
+                            <i class="formulario__validacion-estado fas fa-times-circle"></i>
+                        </div>
+                        <p class="formulario__input-error" id="error1">Debe ingresar entre 3 y 30 letras y/o números</p>
+                    </div>
+
+                    
+                    <div class="formulario__grupo" id="grupo__numero">
+                        <div class="formulario__grupo-input">
+                            <span class="input-group-addon">
+                                <i class="fas fa-map-pin" id="icons2"></i>
+                            </span>
+
+                            <input type="number" class="formulario__input" name="numero" id="numero" placeholder="Número">
+                            <i class="formulario__validacion-estado fas fa-times-circle"></i>
+                        </div>
+                        <p class="formulario__input-error" id="error2">Solo se permiten números de 1 a 5 dígitos </p>
+                    </div>
+
+                    <div class="form-group" id="espgacio">
+                        <i class="fas fa-globe" id="globe"></i>
+                            <select   id="select1" class="container">
+                                <option  value="" hidden  >Seleccionar Ciudad...</option>
+                                <option> Córdoba</option>
+                                <option> Carlos Paz</option>
+                                <option> Villa Allende</option>
+                                <option> Villa María</option>
+                              </select>
+                        <label id="error_txt_ciudad1">Debe seleccionar la ciudad</label>
+                    </div>
+
+                   
+                    <div class="formulario__grupo" id="grupo__Referencia">
+                        <div class="formulario__grupo-input">
+                            <span class="input-group-addon">
+                                <i class="fas fa-clipboard" id="icons2"></i>
+                            </span>
+                            <input type="text" class="formulario__input" name="referencia" id="referencia" placeholder="Referencia (Opcional)">
+                            <i class="formulario__validacion-estado fas fa-times-circle"></i>
+                        </div>
+                        
+                    </div>
+                    <!-- Error campos no llenos-->
+                    <div class="formulario__mensaje" id="formulario__mensaje">
+                        <p><i class="fas fa-exclamation-triangle"></i> <b>Error:</b> Rellene los campos correctamente </p>
+                    </div>
+
+                   <!-- <input type="text" class="form-control" id="txt_direccion_entrega" placeholder="Direccion de entrega">-->
+
+                </div>
+                <label id="error_txt_entrega">Debe ingresar la dirección de entrega</label>
+            </div>
+        </div>
+
+        <!-- -->
+
+            <div class="form-group" id="espacio">
+                <label for="" id="lbl_secciones">Método de pago</label>
+                <div class="btn-group" role="group" aria-label="Basic example">
+                    <div id="btn_efectivo" onclick="procesarclickEfectivo()" ng-class="{'btn btn-secondary' : 'true', 'border' : metodoPago == 'E'}" ng-model="metodoEfectivo"
+                    ng-click="metodoPago='E';pagoElegido='S'">Efectivo
+                    </div>
+                    <div id="btn_tarjeta" onclick="procesarclickTarjeta()" ng-class="{'btn btn-secondary' : 'true', 'border' : metodoPago == 'T'}" ng-model="metodoTarjeta"
+                    ng-click="metodoPago='T';pagoElegido='S'">Tarjeta VISA
+                    </div>
+
+      
+
+                </div>
+            </div>
+            
+                <label id="error_pagoElegido" style="display: none;">Debe seleccionar un método de pago</label>
+            
+            <div class="form-group" id="formE" name="formE">
+
+            <div id="formE" name="formE">
+
+                <div class="formEfectivo" id="bordes" ng-if="metodoPago == 'E'">
+                        <label for="lbl_efectivo" id="lbl_secciones">Monto a pagar</label>
+                        <div id="bordes_pagoefectivo">
+                            <div class="input-group">
+                                <span class="input-group-addon">
+                                    <i class="fas fa-dollar-sign" id="cash"></i>
+                                </span>
+                                <input type="number" class="form-control" id="txt_efectivo" placeholder="¿Con cuánto abonas?" min="0">
+
+                            </div>
+                        <label id="error_txt_efectivo" style="display: none;">Debe ingresar el monto a abonar</label>
+                        <label id="error_txt_efectivo_negativo" style="display: none;">Debe ingresar el monto positivo</label>
+                        </div>
+                </div>
+            </div>
+
+            <form id="formTC" name="formTC">
+            <div class="formAdicional" ng-if="metodoPago == 'T'">
+            <div id="bordes">
+                <label for="" id="lbl_secciones">Número de tarjeta</label>
+                <input id="num_tarjeta" type="text" class="form-control" ng-model="num_tarjeta" name="num_tarjeta" value="" pattern="^4[0-9]{12}(?:[0-9]{3})?$" maxlength="16">
+                <h6 style="color:red" ng-show="(metodoPago == 'T') && formLoQueSea.num_tarjeta.$invalid && formLoQueSea.num_tarjeta.$dirty">
+            Incorrecto! Ingresar tarjeta VISA válida sin guiones ni espacios.</h6>
+                <label for="" id="lbl_secciones">Nombre y apellido del titular</label>
+                <input id="n_a_titular" type="text" class="form-control" name="n_a_titular" ng-model="n_a_titular" value="" pattern="[a-zA-ZàáèéìíòóùúüñÀÁÈÉÌÍÒÓÙÚÜÑ ]{2,48}">
+                <h6 style="color:red" ng-show="(metodoPago == 'T') && formLoQueSea.n_a_titular.$invalid && formLoQueSea.n_a_titular.$dirty">
+            Incorrecto! Ingresar nombre completo como aparece en la tarjeta.</h6>
+                <label for="" class="" id="lbl_secciones">Código de seguridad</label>
+                <input id="cod_seg" type="text" class="form-control" name="cod_seg" ng-model="cod_seg" value="" pattern="[0-9]\d\d" maxlength="3">
+                <h6 style="color:red" ng-show="(metodoPago == 'T') && formLoQueSea.cod_seg.$invalid && formLoQueSea.cod_seg.$dirty">
+            Incorrecto</h6>
+
+                <label for="" class="" id="lbl_secciones">Fecha de vencimiento</label>
+                <input id="fecha_venc" type="month" class="form-control" ng-model="fecha_venc" name="fecha_venc" value="" min="2021-04">
+                <h6 style="color:red" ng-show="(metodoPago == 'T') && formLoQueSea.fecha_venc.$invalid && formLoQueSea.fecha_venc.$dirty">
+            Incorrecto! Ingresar fecha válida no vencida.</h6>
+          
+                <div class="form-group" id="credit_card">
+                <img src="visa.jpg" id="visa">
+                </div>
+                <label id="error_txt_tarjetas" style="display: none;">Debe completar todos los campos solicitados</label>
+            </div>
+            </div>
+        </div>
+
+        <div class="form-group" id="espacio">
+            <label for="txt_fecha_entrega" id="lbl_secciones">Cuando recibirlo</label>
+            <div id="bordes">
+                <div class="input-group">
+                    <span class="input-group-addon">
+                        <i class="far fa-calendar" id="icons"></i>
+                    </span>
+                <!-- <input type="text" class="form-control" id="recipcion" placeholder="Fecha/Hora de recepción."> -->
+                <input type="date" class="form-control recipcion" id='fecha_pedido' min='2021-04-27' onchange="deshabilitarInput()" >
+                <div class="input-group pb-3">
+                        <span class="input-group-addon">
+                            <i class="far fa-clock" id="icons"></i>
+                        </span>
+                        <input type="time" id='hora_pedido' class="recipcion" name="hora" onchange="deshabilitarInput()">
+                    </div>
+                    <label id="error_txt_hora">Debe seleccionar la hora que desera recibir pedido</label>
+                </div>
+
+
+            </div>
+            
+                <!-- <label for="txt_hora_entrega" id="lbl_secciones">Cuando recibirlo</label> -->
+    
+            <input type="checkbox" class="btn btn-secondary " id="btn_antes_posible" onchange="deshabilitarInput()">   Lo antes posible</input> 
+            
+            <label id="error_txt_recibirlo">Debe seleccionar cuando desea recibir el pedido</label>
+        
+        <button type="submit" class="btn btn-primary" id="btn_submit" onclick="validar()">Confirmar</button>
+      </form>
+      <span id='pedido_enviado'>Pedido enviado con exito!</span>
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-Piv4xVNRyMGpqkS2by6br4gNJ7DXjqk09RmUpJ8jgGtD7zP9yug3goQfGII0yAns" crossorigin="anonymous"></script>
+
+<footer>
+<p>Los repartidores ganan de media entre $40 y $90 por cada pedido que entregan</p>
+</footer>
+
+<!--  Error campos vacíos-->
+<div class="formulario__mensaje" id="formulario__mensaje">
+    <p><i class="fas fa-exclamation-triangle"></i> <b>Error:</b> Rellene los campos correctamente </p>
+</div>
+
+<div  id="espacio_btn_final">
+</div>
+
+<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCicYfpAAaIu2Z8UImuvoGl1epoh77hdlM&libraries=places"></script>
+<script src="js.js"></script> 
+<script src="localizacion.js"></script>
+
+
+<!-- Iconos validación-->
+<script src="https://kit.fontawesome.com/2c36e9b7b1.js" crossorigin = "anonymous"></script>
+
+
+</body>
+
+</html>
+
+

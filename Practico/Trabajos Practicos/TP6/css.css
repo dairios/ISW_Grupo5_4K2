@@ -1,0 +1,567 @@
+#cuerpo{
+    font-family: "Montserrat";
+    background-color: #ffffff;
+    color: #000000;
+   
+
+}
+#nav{
+    background-color: #ffffff;
+    border-bottom: 1px solid #4a4a4a;
+    font-family: "Montserrat";
+    margin-top: 3px;
+}
+.fa-arrow-left{
+    color: #000000;
+    font-size: 17px;
+}
+#globe{
+    color: #000000;
+}
+#titulo{
+    color: #000000;
+    font-size: 17px;
+    margin-left: 15px;
+    font-family: "Montserrat";
+}
+#formulario{
+    margin-top: 20px;
+    margin-left: 10px;
+    margin-right: 10px;
+}
+#espacio{
+    margin-top: 30px;
+    margin-bottom: 10px;
+}
+#txt_pedido{
+    color: #000000;
+    background-color: #ffffff;
+    border-color: #ffffff;
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+#bordes{
+    border-top: solid 1px #4a4a4a;
+    border-bottom: solid 1px #4a4a4a;
+}
+#multer{
+    margin-top: 20px;
+    margin-bottom: 10px;
+}
+#selc_ciudades{
+    width: 100%;
+    color: #000000;
+    background-color: #ffffff;
+    border-color: #ffffff;
+    margin-top: 15px;
+    margin-bottom: 15px;
+    margin-left: 10px;
+}
+#btn_submit{
+    width: 90%;
+    border-radius: 20px;
+    color: rgb(0, 0, 0);
+    background-color: #949494;
+    border-color: #949494;
+    font-weight: 600;
+    margin-bottom: 10px;
+    position: fixed;
+	bottom: 0px;
+	right: 5%;
+    left:5%;
+	transition: all 300ms ease 0ms;
+	box-shadow: 0px 8px 15px rgba(255, 255, 255, 0.1);
+	z-index: 999;
+    opacity: 1;
+}
+#txt_comercio{
+    width: 90%;
+    color: #000000;
+    background-color: #ffffff;
+    border-color: #ffffff;
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+#txt_direccion_entrega{
+    width: 90%;
+    color: #000000;
+    background-color: #ffffff !important;
+    border-color: #ffffff;
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+#txt_hora_entrega{
+    width: 100%;
+    color: #000000;
+    background-color: #ffffff;
+    border-color: #ffffff;
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+#btn_efectivo{
+    width: 48%;
+    border-top-left-radius: 10px;
+    border-bottom-left-radius: 10px;
+    background-color: #000000;
+    border-color: #000000;
+    margin-bottom: 5px;
+}
+#btn_tarjeta{
+    width: 48%;
+    margin-left: 6px;
+    border-top-right-radius: 10px;
+    border-bottom-right-radius: 10px;
+    background-color: #000000;
+    border-color: #000000;
+    margin-bottom: 5px;
+   
+}
+
+#bordes_pagoefectivo i{
+    margin: 10px;
+}
+
+.btn-group{
+    width: 100%;
+}
+.recipcion{
+    background-color: #ffffff;
+    border-color: #ffffff;
+    margin-bottom: 10px;
+    margin-top: 10px;
+}
+#btn_antes_posible{
+    background-color: #ffffff;
+    border-color: #ffffff;
+    margin-bottom: 3px;
+}
+#txt_efectivo{
+    border-color: #000000;
+    width: 90%;
+    color: #000000;
+    background-color: #ffffff;
+    border-color: #ffffff;
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+#lbl_secciones{
+    font-size: 18px;
+}
+#intro{
+    font-size: 14px;
+}
+#espacio_btn_final{
+    margin-bottom: 60px;
+}
+#iconss{
+    position: relative;
+
+    color: #acacac;
+}
+
+
+
+#icons{
+    position: relative;
+    top: 18px;
+    color: #acacac;
+}
+#icons2{
+    color: #acacac;
+}
+#cash{
+    position: relative;
+    top:10px;
+    right: 10px;
+    font-size:16px;
+    color: #acacac;
+}
+#icons_pict{
+    font-size:16px;
+    color: #acacac;
+}
+#icons_cuidad{
+    position: relative;
+    top: 15px;
+    font-size:16px;
+    color: #acacac;
+}
+
+.container{
+    width:auto;
+    padding: 7px;
+    background-color: #ffffff;
+    margin-top: 10px;
+    font-size: 14px;
+    color: #000000;
+    border-radius: 3px;
+}
+.container option{
+    padding: 2px;
+    color:#000000;
+}
+
+
+
+
+#fecha_pedido{
+    background-color: #ffffff;
+    border: none;
+    color: #000000 ;
+    
+}
+#fecha_pedido:hover, #hora_pedido:hover{
+    cursor:text;
+}
+#hora_pedido{
+    border: none;
+    margin-left: 1em;
+    color: #acacac ;
+
+}
+
+#hora_pedido::-webkit-inner-spin-button,
+#hora_pedido::-webkit-calendar-picker-indicator {
+    display: none;
+    -webkit-appearance: none;
+}
+
+
+#select{
+    width: 90%;
+    border-color: #ffffff;
+    border: none !important;
+    border: 0px;
+}
+#select1{
+    width: 90%;
+    border-color: #ffffff;
+    border: none !important;
+    border: 0px
+}
+#select:active{
+    border-color: #ffffff;
+    border: none !important;
+}
+#select:hover{
+    border-color: #ffffff;
+    border: none !important;
+}
+#select1:active{
+    border-color: #ffffff;
+    border: none !important;
+}
+#select1:hover{
+    border-color: #ffffff;
+    border: none !important;
+}
+
+#espacido.form-group{
+    width: 100%;
+    }
+    #espgacio.form-group{
+        width: 100%;
+        }
+/*
+.form-select{
+    width: 100%;
+    height: 40px;
+    padding: initial 10px;
+    background-color: #1f1e1e;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    font-size: 14px;
+    color: #acacac;
+    border-radius: 3px;
+}
+*/
+
+
+
+textarea:focus,
+input[type="text"]:focus,
+input[type="password"]:focus,
+input[type="datetime"]:focus,
+input[type="datetime-local"]:focus,
+input[type="date"]:focus,
+input[type="month"]:focus,
+input[type="time"]:focus,
+input[type="week"]:focus,
+input[type="number"]:focus,
+input[type="email"]:focus,
+input[type="url"]:focus,
+input[type="search"]:focus,
+input[type="tel"]:focus,
+input[type="color"]:focus,
+.uneditable-input:focus {   
+  border-color: none;
+  box-shadow: none;
+  outline: none;
+}
+
+footer{
+    margin-top: 10px;
+    color: #acacac;
+    font-style: italic;
+    font-size:12px;
+    margin-left: 10px;
+    margin-right: 10px;
+}
+
+
+/*Direccion de entrega*/
+
+.formulario__grupo-incorrecto .formulario__label {
+    color: #bb2929;
+}
+
+
+.formulario__grupo-incorrecto .formulario__input{
+    border: 3px solid #bb2929;
+}
+
+.formulario__input-error{
+    font-size: 12px;
+    margin-bottom: 0;
+    display: none;
+}
+
+.formulario__input-error-activo{
+    display: block;
+}
+
+.formulario__grupo-input{
+    position: relative;
+}
+
+.formulario__input{
+    width: 100%;
+    border: 3px solid transparent;
+    height: 45px;
+    padding: 0 40px 0 10px;
+}
+.form_input{
+    width: 100%;
+    border: 3px solid transparent;
+    height: 45px;
+    padding: 0 40px 0 10px;
+}
+.formulario__validacion-estado{
+    position: absolute;
+    right: 10px;
+    bottom: 15px;
+    z-index: 100;
+    font-size: 16px;
+    opacity: 0;
+}
+
+#calle,#numero,#ciudad{
+    width: 90%;
+    color: #000000;
+    background-color: #ffffff;
+    border-color: #ffffff;
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+
+#referencia{
+    width: 90%;
+    color: #000000;
+    background-color: #ffffff;
+    border-color: #ffffff;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    height: 20px;
+}
+
+.formulario__mensaje {
+    height: 45px;
+    line-height: 45px;
+    background: #f66060;
+    padding: 0 15px;
+    border-radius: 3px;
+    display: none;
+}
+
+.formulario__mensaje-activo{
+    display: block;
+}
+
+.formulario__mensaje p {
+    margin: 0;
+}
+
+
+#num_tarjeta{
+    background-color: #ffffff;
+    border-color: #000000;
+    color: #000000;
+    margin-bottom: 3px;
+    
+}
+#lbl_secciones{
+    margin-top: 10px;
+}
+#n_a_titular{
+    background-color: #ffffff;
+    border-color: #000000;
+    color: #000000;
+    margin-bottom: 3px;
+}
+#cod_seg{
+    background-color: #ffffff;
+    border-color: #000000;
+    color: #000000;
+    margin-bottom: 3px;
+}
+#fecha_venc{
+    background-color: #ffffff;
+    border-color: #000000;
+    color: #000000;
+    margin-bottom: 3px;
+}
+#credit_card{
+    margin-top: 15px;
+
+}
+
+#pedido_enviado{
+    background-color: green;
+    display: none;
+    margin: 1em;
+    padding: 1em;
+    text-align: center;
+    color: #acacac;
+    border-radius: 5px;
+}
+#error_txt_hora{
+    color: red;
+    font-size: 13px;}
+#error_txt_recibirlo{
+    color: red;
+    font-size: 13px;
+}
+#error_txt_solo_imagenes{
+    color: red;
+    font-size: 13px;
+}
+#error_txt_5_megas{
+    color: red;
+    font-size: 13px;
+}
+#error1, #error2, #error3{
+    color: red;
+    font-size: 13px;
+}
+#error_txt_pedido{
+    color: red;
+    font-size: 13px;
+}
+#error_txt_comercio{
+    color: red;
+    font-size: 13px;
+}
+#error_txt_entrega{
+    color: red;
+    font-size: 13px;
+}
+
+#error_txt_ciudad{
+    color: red;
+    font-size: 13px;
+}
+#error_txt_ciudad1{
+    color: red;
+    font-size: 13px;
+}
+
+#error_pagoElegido{
+    color: red;
+    font-size: 13px; 
+}
+
+#error_txt_efectivo{
+    color: red;
+    font-size: 13px; 
+}
+
+#error_txt_efectivo_negativo{
+    color: red;
+    font-size: 13px; 
+}
+
+#imagen{
+    background-color: #ffffff;
+    border-color: #000000;
+    color: #000000;
+    margin-left: 10px; 
+}
+
+#map{
+    width: 100%;
+    height: 500px;
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+
+#datos_comercio{
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+
+#btn_ubiEsp{
+    margin-top: 10px;
+    width: 48%;
+    border-top-left-radius: 10px;
+    border-bottom-left-radius: 10px;
+    background-color: #000000;
+    border-color: #000000;
+    margin-bottom: 5px;
+
+}
+#btn_ubiEsp:active{
+    border-color: #000000;
+}
+
+
+#btn_ubiEsp:hover, a.btnAzul:focus{
+    border-color: #000000;
+}
+     
+#btn_ubiEsp:active{
+    border-color: #000000;
+}
+#btn_ubiAct:hover, a.btnAzul:focus{
+    border-color: #000000;
+}
+     
+#btn_ubiAct:active{
+    border-color: #000000;
+}
+#btn_ubiAct{
+    margin-top: 10px;
+    width: 48%;
+    margin-left: 6px;
+    border-top-right-radius: 10px;
+    border-bottom-right-radius: 10px;
+    background-color: #000000;
+    border-color: #000000;
+    margin-bottom: 5px;
+}
+#btn_ubiAct:active{
+    border-color: #000000;
+}
+
+#calleComercio,#numeroComercio,#ciudadComercio, #referenciaComercio{
+    width: 90%;
+    color: #000000;
+    background-color: #dddddd;
+    border-color: #dddddd;
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+
+#errorCalleC, #errorNumeroC, #errorCiudadC, #error_txt_tarjetas{
+    color: red;
+    font-size: 13px;
+}
